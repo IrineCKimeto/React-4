@@ -6,7 +6,7 @@ const AddReviewForm = ({ bookId }) => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/users')
+    fetch('https://phase4-1.onrender.com/users')
       .then((response) => response.json())
       .then((data) => {
         console.log("Fetched Users:", data);
@@ -28,7 +28,7 @@ const AddReviewForm = ({ bookId }) => {
   });
 
   const handleSubmit = (values, { resetForm }) => {
-  fetch("http://localhost:5000/reviews", {
+  fetch("https://phase4-1.onrender.com/reviews", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...values, book_id: bookId }),

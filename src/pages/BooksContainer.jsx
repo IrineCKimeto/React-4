@@ -7,7 +7,7 @@ const BooksContainer = () => {
 
   // Fetch all books from the backend
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("https://phase4-1.onrender.com/books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error fetching books:", error));
@@ -15,7 +15,7 @@ const BooksContainer = () => {
 
   // Handle delete book
   const handleDeleteBook = (id) => {
-    fetch(`http://localhost:5000/books/${id}`, { method: "DELETE" })
+    fetch(`https://phase4-1.onrender.com/books/${id}`, { method: "DELETE" })
       .then(() => {
         setBooks(books.filter((book) => book.id !== id));
         alert("Book deleted successfully!");
@@ -32,7 +32,7 @@ const BooksContainer = () => {
   // Handle update book
   const handleUpdateBook = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:5000/books/${editingBook.id}`, {
+    fetch(`https://phase4-1.onrender.com/books/${editingBook.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedBook),

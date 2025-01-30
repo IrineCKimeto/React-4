@@ -11,7 +11,7 @@ const BookDetails = () => {
   const [updatedBook, setUpdatedBook] = useState({ title: '', author: '', genre: '' });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/books/${id}`)
+    fetch(`https://phase4-1.onrender.com/books/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setBook(data);
@@ -24,7 +24,7 @@ const BookDetails = () => {
   // UPDATE book details
   const handleUpdateBook = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:5000/books/${id}`, {
+    fetch(`https://phase4-1.onrender.com/books/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedBook),
@@ -39,7 +39,7 @@ const BookDetails = () => {
 
   // DELETE book
   const handleDeleteBook = () => {
-    fetch(`http://localhost:5000/books/${id}`, { method: 'DELETE' })
+    fetch(`https://phase4-1.onrender.com/books/${id}`, { method: 'DELETE' })
       .then(() => navigate('/'))
       .catch((error) => console.error('Error deleting book:', error));
   };

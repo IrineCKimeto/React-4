@@ -10,7 +10,7 @@ const ReviewsSection = () => {
 
   // Fetch all reviews
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://phase4-1.onrender.com/reviews")
       .then((response) => response.json())
       .then((data) => setReviews(data))
       .catch((error) => console.error("Error fetching reviews:", error));
@@ -18,7 +18,7 @@ const ReviewsSection = () => {
 
   // Fetch all users
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://phase4-1.onrender.com/users")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching users:", error));
@@ -26,7 +26,7 @@ const ReviewsSection = () => {
 
   // Fetch all books
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("https://phase4-1.onrender.com/books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error fetching books:", error));
@@ -36,8 +36,8 @@ const ReviewsSection = () => {
   const handleSubmit = (values, { resetForm }) => {
     const method = editingReview ? "PUT" : "POST";
     const url = editingReview
-      ? `http://localhost:5000/reviews/${editingReview.id}`
-      : "http://localhost:5000/reviews";
+      ? `https://phase4-1.onrender.com/reviews/${editingReview.id}`
+      : "https://phase4-1.onrender.com/reviews";
 
     fetch(url, {
       method,
@@ -63,7 +63,7 @@ const ReviewsSection = () => {
 
   // Handle Delete Review
   const handleDeleteReview = (id) => {
-    fetch(`http://localhost:5000/reviews/${id}`, { method: "DELETE" })
+    fetch(`https://phase4-1.onrender.com/reviews/${id}`, { method: "DELETE" })
       .then(() => {
         setReviews(reviews.filter((review) => review.id !== id));
         alert("Review deleted successfully!");

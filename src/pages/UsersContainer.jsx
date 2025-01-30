@@ -6,7 +6,7 @@ const UsersContainer = () => {
 
   // Fetch users
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://phase4-1.onrender.com/users")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching users:", error));

@@ -14,7 +14,7 @@ const AddUserForm = ({ setUsers }) => {
   });
 
   const handleSubmit = (values, { resetForm }) => {
-    fetch('http://localhost:5000/users', {
+    fetch('https://phase4-1.onrender.com/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(values),
@@ -25,7 +25,7 @@ const AddUserForm = ({ setUsers }) => {
           alert(`Error: ${data.error}`);
         } else {
           alert('User added successfully!');
-          setUsers((prevUsers) => [...prevUsers, data]); // Update state
+          setUsers((prevUsers) => [...prevUsers, data]);
           resetForm();
         }
       })
